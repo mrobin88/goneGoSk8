@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/flights/ChangeThis!!!!!',{
+mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser:true,
     useCreateIndex:true
 });
@@ -8,6 +8,7 @@ mongoose.connect('mongodb://localhost:27017/flights/ChangeThis!!!!!',{
 const db = mongoose.connection
 
 db.on('connected', function(){
-    console.log(`Connected to MongoDB at ${db.host}:${db.port}`)
+    console.log(`Connected to MongoDB at ${db.host}:${db.port} that contains ${db.modelNames.length} things`)
 })
-~       
+
+module.exports = mongoose
