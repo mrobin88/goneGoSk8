@@ -1,0 +1,5 @@
+test for git if git comit -am "test commit"
+
+                vs.
+
+git add .
