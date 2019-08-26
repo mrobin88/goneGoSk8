@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 
+
+// mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser:true,
-    useCreateIndex:true
+   
 });
 
 const db = mongoose.connection
