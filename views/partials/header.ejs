@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
     <title>GoneGoSK9</title>
 </head>
 <header>
-    <nav>
-        <a class="homeLogo" href="/index">GoneGoSK9</a>
-        <a href="">Meetups</a>
-        <a href="">Skate Spots</a>
-        <a class="mkEvent" href="">Post a Meetup Event</a>
-        <input type="search" id="nav-search" placeholder="Search meetups, freinds, skate spots"></input>
-        <a href=""></a>
-        <a href=""></a>
-        <% if (user) { %>
-            <a href="/logout">Log Out</a>
-        <% } else { %>
-            <a href="/auth/google"  >Login with Google</a>
-        <% } %>
-        
-    </nav>
+        <div class="homeLogo">
+            <a  href="/">GoneGoSK9</a>
+        </div>
+        <div>
+            <a href="MeetUps">Meetups</a>
+        </div>
+        <div class="mkEvent">
+            <a href="/events/new">Post a Meetup Event</a>
+        </div>
+        <div>
+            <a href="spot">Skate Spots</a>
+        </div>
+        <div class = "search-box">
+            <input type="search" id="nav-search" placeholder="Search meetups, freinds, skate spots"></input>
+
+        </div>
+        <div class = "login">
+            <% if (user) { %>
+                <a href="/logout">Log Out</a>
+            <% } else { %>
+                <a href="/auth/google">Login with Google</a>
+            <% } %>
+        </div>
 </header>
+<body>
 
 
 

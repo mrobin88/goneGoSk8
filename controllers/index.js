@@ -1,15 +1,20 @@
 const User = require('../models/user')
+const Event = require('../models/event')
 
 module.exports = {
-  index
+  index,
+ 
 }
+
 function index(req,res){
-User.find({}, function(err, users){
-  res.render('index',{
-    title:'Gone Go',
-    users,
-    user: req.user
-  })
-})
-}
+  Event.find({})
+  .then(events =>   
+    res.render('index',{
+        title:'Gone Go',
+        user: req.user,
+        events
+      })
+  )
+    }
+
 

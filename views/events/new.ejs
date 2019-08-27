@@ -1,0 +1,21 @@
+<%- include('../partials/header.ejs') %>
+
+<a href="/">event</a>
+</header>
+<h2>Enter a New Skate Event</h2>
+<form action="/events" method="POST">
+   <label>Spot?
+    <input type="text" name="spot">
+  </label><br>
+  <label>When?
+    <input type="date" name="time">
+  </label><br>
+  <label for="discription">What and Why?</label>
+  <input type="text" name= "discription">
+<br>
+ <br>
+   <input  type="submit" value="Add Event">
+ </form>
+</body>  
+</body>
+</html>

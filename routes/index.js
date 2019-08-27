@@ -19,9 +19,11 @@ router.get('/oauth2callback', passport.authenticate(
   }
 ))
 
+
 /* hit logout change the '/' */ 
 router.get('/logout', function(req,res){
   req.logout();
   res.redirect('/')
 })
+
 module.exports = router;

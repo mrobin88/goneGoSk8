@@ -18,8 +18,9 @@ require('./config/passport')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const eventsRouter = require('./routes/events');
 
-var app = express();
+var app = express(); 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -41,6 +42,7 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+app.use('/',eventsRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 

@@ -1,8 +1,17 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+* {
+  box-sizing: border-box;
+  font-family: sans-serif
+  }
+header {
+  height: 10vh;
+  background-color: black;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-a {
-  color: #00B7FF;
+}
+a{
+  color: white;
 }
