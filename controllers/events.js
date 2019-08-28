@@ -58,15 +58,16 @@ console.log(req.params.id)
 )
 }
 function editEv(req, res){
+  console.log("EDIT BUTTON HIT")
+
   Event.findById(req.params.id)
   .then(event=>{
-    console.log(req.params.id , event, user)
-    res.render('events/edit',
-    {
+    res.render('events/edit',{
       user: req.user,
       event
     })
   })
+
 }
 
   

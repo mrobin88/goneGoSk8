@@ -5,7 +5,7 @@
 <h2>Enter a New Skate Event</h2>
 <form action="/events" method="POST">
   <%= user%>
-  <input type="hidden" value="createdBy" name=""> 
+  <input type="hidden" value="<%=user%>" name="user"> 
   <label>Spot?
     <input type="text" name="spot">
   </label><br>
