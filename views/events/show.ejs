@@ -1,0 +1,39 @@
+<%- include('../partials/header') %>
+<body>
+  <section id="show-page">
+    <div>Spot: </div>
+    <p>
+    <%= event.spot %>
+    </p>
+    <div>time: </div>
+  <p>
+    <%= event.date %>
+  </p>
+    <div>going: </div>
+    <% if (event.going.length) { %>
+    <%= event.going %>
+    <table>
+      <thead>
+        <tr>
+          <th>is going</th>
+        </tr>
+        <br>
+      </thead>
+      <tbody>
+        <% event.going.forEach(function(g) { %>
+        <tr>
+          <td><%= g.going %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <h5>No ones telling you</h5>
+    <% } %>
+    <form method="POST" action="/events/<%=event.id%>?_method=DELETE">
+        <button class="delBtn" type="submit">
+          Delete This Event.
+        </button>
+    </form>
+  </body>
+</html>

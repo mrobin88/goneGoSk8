@@ -3,7 +3,10 @@ const Event = require('../models/event')
 
 module.exports = {
   newEvent,
-  create
+  create,
+  show,
+  delEv,
+  editEv
 }
 
 //shows the form page for new event
@@ -15,7 +18,8 @@ function newEvent(req, res){
 
 //saves event to the database
 function create(req, res) {
-  console.log(req.body)
+  
+  console.log(req.user)
   const event = new Event(req.body)
   event.save(function (err) {
     //if errors rerender try again....
@@ -25,3 +29,44 @@ function create(req, res) {
   })
 }
 
+// function show(req, res) {
+
+//   Flight.findById(req.params.id, function (err, flight) {
+//     Ticket.find({flight: flight._id},function(err, tickets){
+//       res.render('flights/show', { airline: 'Flight Details', flight, tickets});
+//     });
+//   });
+// }
+function show(req, res) {
+  Event.findById(req.params.id)
+  .then(event => {
+    console.log(event)
+    res.render('events/show',{
+      event,
+      user: req.user
+    })
+})
+}
+
+function delEv(req, res) {
+console.log(req.params.id)
+  Event.findByIdAndDelete( {"_id" : req.params.id})
+  .then(event => {
+    console.log(event)
+    res.redirect("/")
+  }
+)
+}
+function editEv(req, res){
+  Event.findById(req.params.id)
+  .then(event=>{
+    console.log(req.params.id , event, user)
+    res.render('events/edit',
+    {
+      user: req.user,
+      event
+    })
+  })
+}
+
+  

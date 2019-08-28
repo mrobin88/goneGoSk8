@@ -2,7 +2,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const eventSchema = new Schema({
-  
+  createdBy: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
   time: Date,
   spot: String,
   discription: String,
