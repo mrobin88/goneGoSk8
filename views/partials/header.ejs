@@ -3,32 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../stylesheets/style.css">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link  href="https://fonts.googleapis.com/css?family=Fredoka+One|Wallpoet&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../stylesheets/style.css"> -->
     <title>GoneGoSK9</title>
 </head>
 <header>
-        <div class="homeLogo">
-            <a  href="/">GoneGoSK9</a>
+
+  <nav>
+      <div class="nav-wrapper cyan darken-3">
+          <a href="/index" class="brand-logo center">GoneGoSK9</a>
+          <ul class="left hide-on-med-and-down">
+            <li><a href="/events/new">Post Skate Event</a></li>
+            <li class="active">        
+                <div class = "login">
+                    <% if (user) { %>
+                        <a href="/logout">Log Out</a>
+                    <% } else { %>
+                        <a href="/auth/google">Login with Google</a>
+                    <% } %>
+                </div>
+            </li>
+          </ul>
         </div>
-        <div class="mkEvent">
-            <a href="/events/new">Post a Meetup Event</a>
-        </div>
-        <!-- <div>
-            <a href="spot">Skate Spots</a>
-        </div> -->
-        <!-- <div class = "search-box">
-            <input type="search" id="nav-search" placeholder="Search meetups, freinds, skate spots"></input>
-        </div> -->
-        <div class = "login">
-            <% if (user) { %>
-                <a href="/logout">Log Out</a>
-            <% } else { %>
-                <a href="/auth/google">Login with Google</a>
-            <% } %>
-        </div>
+      </nav>
 </header>
 <body>
+<div class="container">
 
 
 

@@ -2,12 +2,16 @@ const express = require('express');
 const router = express.Router();
 const eventsController = require('../controllers/events');
 
-router.get('/events/new',eventsController.newEvent)
-router.post('/events', eventsController.create)
-router.get('/events/:id', eventsController.show)
-router.delete('/events/:id', eventsController.delEv)
-router.get('/events/:id/edit', eventsController.editEv)
-router.patch('/events/:id', eventsController.updateEv)
+router.get('/events/new',isLoggedIn,eventsController.newEvent)
+router.post('/events', isLoggedIn, eventsController.create)
+router.get('/events/:id', isLoggedIn, eventsController.show)
+router.delete('/events/:id', isLoggedIn, eventsController.delEv)
+router.get('/events/:id/edit', isLoggedIn, eventsController.editEv)
+router.put('/events/:id', isLoggedIn, eventsController.updateEv)
 
+function isLoggedIn(req,res,next){
+    if(req.isAuthenticated() ) return next()
+    res.redirect('/auth/google')
+}
 
-module.exports = router;
+module.exports = router;  

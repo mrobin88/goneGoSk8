@@ -1,4 +1,4 @@
-const Event = require('../models/event')
+const Spot = require('../models/spot')
 
 
 module.exports = {
@@ -63,9 +63,12 @@ console.log(req.params.id)
 function editEv(req, res){
   console.log("EDIT BUTTON HIT")
   console.log(req.body)
-  Event.findByIdAndUpdate(req.params.id, req.body)
-  .populate("createdBy")
-  .then(event=>{
+  Event.findByIdAndUpdate(req.params.id, req.body,{new: true}, (err, doc)=> {
+    if (err) {
+        console.log("Something wrong when updating data!");
+    }
+    console.log(doc);
+}).then(event=>{
     res.render('events/edit',{
       event,
       user: req.user

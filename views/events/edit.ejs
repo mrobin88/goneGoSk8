@@ -1,11 +1,9 @@
 <%- include('../partials/header.ejs') %>
 
-<a href="/">events</a>
-</header>
+
 <h2>Edit Skate Event</h2>
 <form method="POST" action="/events/<%=event.id%>?_method=PUT">
-  <%= user%>
-  <input type="hidden" value="createdBy" name="createdBy">
+  <h1>Host: <%= event.createdBy.name%></h1>
   <label>Spot?
     <input type="text" name="spot" value="<%=event.spot%>">
   </label><br>
@@ -16,9 +14,6 @@
   <input type="text" name="discription" value="<%=event.discription%>">
   <br>
   <br>
-  <input type="submit" value="edit Event">
+  <input type="submit" value="Edit Event">
 </form>
-</body>
-</body>
-
-</html>
+<%- include('../partials/footer.ejs') %>

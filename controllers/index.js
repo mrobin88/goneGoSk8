@@ -12,10 +12,9 @@ function index(req,res){
     res.render('index',{
         title:'Gone Go',
         user: req.user,
-        events,
-        
+        events
       })
   )
-    }
+}
 
 

@@ -1,17 +1,21 @@
 <%- include('../partials/header') %>
-<body>
-  <section id="show-page">
-    <div>Spot: </div>
+<section id="container">
+    <div class="show-title">Spot: </div>
     <p>
     <%= event.spot %>
     </p>
-    <div>time: </div>
+    <div class="show-title">time: </div>
   <p>
-    <%= event.date %>
+    <%= event.time %>
   </p>
-    <div>going: </div>
+  <div>what?:    <%=event.discription%>
+ 
+</div>
+    <div class="show-title">going: </div>
     <% if (event.going.length) { %>
     <%= event.going %>
+    
+    
     <table>
       <thead>
         <tr>
@@ -19,6 +23,14 @@
         </tr>
         <br>
       </thead>
+     
+     
+     
+     
+     
+     
+     
+     
       <tbody>
         <% event.going.forEach(function(g) { %>
         <tr>
@@ -30,15 +42,17 @@
     <% } else { %>
     <h5>No ones telling you</h5>
     <% } %>
+    
+    
+    
+    
+    
     <form method="POST" action="/events/<%=event.id%>?_method=DELETE">
-        <button class="delBtn" type="submit">
-          Delete This Event.
-        </button>
-      </form>
-      <form method="GET" action="/events/<%=event.id%>/edit">
-        <button class="delBtn" type="submit">
-          Edit This Event.
+        <button type="submit" class="btn waves-effect waves-light deep-orange accent-4">Delete This Event.<i class="material-icons left">delete_forever</i> 
         </button>
     </form>
-  </body>
-</html>
+    <form method="GET" action="/events/<%=event.id%>/edit">
+        <button type="submit" class="btn waves-effect waves-light green accent-2">Edit This Event.<i class="material-icons left">edit</i>
+        </button>
+    </form>
+    <%- include('../partials/footer.ejs') %>

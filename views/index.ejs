@@ -1,16 +1,14 @@
 <%- include('./partials/header.ejs') %>
- 
-      <h1></h1>
+<div id="list-box">
       <p>Welcome to Gone Go SK9</p>
       <h1>Events</h1>
   <table>
       <thead>
           <tr>
-              <th>Created</th>
+              <th>Host</th>
               <th>Spot</th>
               <th>Time</th>
-
-
+              <th>Info</th>
           </tr>
       </thead>
       <tbody>
@@ -20,12 +18,11 @@
                   <td><%= e.createdBy %></td>
                   <td><%= e.spot %></td>
                   <td><%= e.time %></td>
-                  <td><a href="/events/<%= e._id %>"">more intel</a></td>  
-                               
+                  <td><%= e.discription %></td>
+                  <td><a href="/events/<%= e._id %>"">more intel</a></td>      
               </tr>
           <% }); }%>
       </tbody>
   </table>
-
-  </body>
-</html>
+</div>
+<%- include('./partials/footer.ejs') %>
