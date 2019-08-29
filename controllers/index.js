@@ -8,6 +8,7 @@ module.exports = {
 
 function index(req,res){
   Event.find({})
+  .populate("createdBy")
   .then(events =>   
     res.render('index',{
         title:'Gone Go',
