@@ -6,8 +6,10 @@
   <table>
       <thead>
           <tr>
+              <th>Created</th>
               <th>Spot</th>
-              <th>time</th>
+              <th>Time</th>
+
 
           </tr>
       </thead>
@@ -15,6 +17,7 @@
       <% if(events){%>
           <% events.forEach(function(e) { %>
               <tr>
+                  <td><%= e.createdBy %></td>
                   <td><%= e.spot %></td>
                   <td><%= e.time %></td>
                   <td><a href="/events/<%= e._id %>"">more intel</a></td>  

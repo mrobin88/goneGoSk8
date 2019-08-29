@@ -6,7 +6,8 @@ module.exports = {
   create,
   show,
   delEv,
-  editEv
+  editEv,
+  updateEv
 }
 
 //shows the form page for new event
@@ -59,15 +60,35 @@ console.log(req.params.id)
 }
 function editEv(req, res){
   console.log("EDIT BUTTON HIT")
-
-  Event.findById(req.params.id)
-  .then(event=>{
+  console.log(req.body)
+  Event.findByIdAndUpdate(req.params.id, req.body,{new: true}, (err, doc)=> {
+    if (err) {
+        console.log("Something wrong when updating data!");
+    }
+    console.log(doc);
+}).then(event=>{
     res.render('events/edit',{
       user: req.user,
       event
     })
   })
-
 }
+
+function updateEv(req,res){
+  Event.findByIdAndUpdate(req.params.id, req.body,{new: true}, (err, doc)=> {
+    if (err) {
+        console.log("Something wrong when updating data!");
+    }
+    console.log(doc);
+}).then(event=>{
+  event.save()
+}).then(event=>{
+    res.render('events/edit',{
+      user: req.user,
+      event
+    })
+  })
+}
+
 
   

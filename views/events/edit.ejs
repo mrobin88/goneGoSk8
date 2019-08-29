@@ -3,21 +3,22 @@
 <a href="/">events</a>
 </header>
 <h2>Edit Skate Event</h2>
-<form action="/events/<%=event.id%>?_method=PUT">
+<form method="POST" action="/events/<%=event.id%>?_method=PUT">
   <%= user%>
-  <input type="hidden" value="createdBy" name="createdBy"> 
+  <input type="hidden" value="createdBy" name="createdBy">
   <label>Spot?
-    <input type="text" name="spot"value="<%=event.spot%>">
+    <input type="text" name="spot" value="<%=event.spot%>">
   </label><br>
   <label>When?
     <input type="date" name="time" value="<%=event.time%>">
   </label><br>
   <label for="discription">What and Why?</label>
   <input type="text" name="discription" value="<%=event.discription%>">
-<br>
- <br>
-   <input  type="submit" value="Add Event">
- </form>
-</body>  
+  <br>
+  <br>
+  <input type="submit" value="edit Event">
+</form>
 </body>
+</body>
+
 </html>
