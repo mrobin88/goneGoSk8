@@ -5,8 +5,11 @@
 [You can get a link to the app hosted on heroku here](https://www.gosk9.herokuapp.com)
 
 screenshots:
+![alt-text][main]
 [https://imgur.com/a/8IsB5Vm]
 more screenshots:
+![alt-text][edit and delete buttons]
 [https://imgur.com/a/Qqj9gGT]
 but wait:
-[https://imgur.com/a/fzE74KY]
+![alt-text][more]
+[https://imgur.com/a/fzE74KY]   
