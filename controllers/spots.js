@@ -1,6 +1,5 @@
 const Spot = require('../models/spot')
 
-
 module.exports = {
   createSpotReview,
   DelSpotReview

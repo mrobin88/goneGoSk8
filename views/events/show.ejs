@@ -1,60 +1,50 @@
 <%- include('../partials/header') %>
 <section id="container">
-    <div class="show-title">Spot: </div>
-    <p>
+  <div class="show-title">Spot: </div>
+  <p>
     <%= event.spot %>
-    </p>
-    <div class="show-title">time: </div>
+  </p>
+  <div class="show-title">time: </div>
   <p>
     <%= event.time %>
   </p>
   <div>what?:<%=event.discription%>
- 
-</div>
-    <div class="show-title">going: </div>
-    <% if (event.going.length) { %>
-    <%= event.going %>
-    
-    
-    <table>
-      <thead>
-        <tr>
-          <th>is going</th>
-        </tr>
-        <br>
-      </thead>
-     
-     
-     
-     
-     
-     
-     
-     
-      <tbody>
-        <% event.going.forEach(function(g) { %>
-        <tr>
-          <td><%= g.going %></td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
-    <% } else { %>
-    <h5>No ones telling you</h5>
-    <% } %>
-    
-    
-    
-    
-    
-    <form method="POST" action="/events/<%=event.id%>?_method=DELETE">
-        <button type="submit" class="btn waves-effect waves-light deep-orange accent-4">Delete This Event.<i class="material-icons left">delete_forever</i> 
-        </button>
-    </form>
-    <form method="GET" action="/events/<%=event.id%>/edit">
-        <button type="submit" class="btn waves-effect waves-light green accent-2">Edit This Event.<i class="material-icons left">edit</i>
-        </button>
-    </form>
 
-    
-    <%- include('../partials/footer.ejs') %>
+  </div>
+
+
+  <!-- future freinds can add -->
+  <div class="show-title">going: </div>
+  <% if (event.going.length) { %>
+  <%= event.going %>
+  <table>
+    <thead>
+      <tr>
+        <th>is going</th>
+      </tr>
+      <br>
+    </thead>
+    <tbody>
+      <% event.going.forEach(function(g) { %>
+      <tr>
+        <td><%= g.going %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <% } else { %>
+  <h5>No ones telling you</h5>
+  <% } %>
+  <form method="POST" action="/events/<%=event.id%>?_method=DELETE">
+    <button type="submit" class="btn waves-effect waves-light deep-orange accent-4">Delete This Event.<i
+        class="material-icons left">delete_forever</i>
+    </button>
+  </form>
+  <form method="GET" action="/events/<%=event.id%>/edit">
+    <button type="submit" class="btn waves-effect waves-light green accent-2">Edit This Event.<i
+        class="material-icons left">edit</i>
+    </button>
+  </form>
+
+
+  <%- include('../partials/footer.ejs') %>

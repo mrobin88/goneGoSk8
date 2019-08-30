@@ -26,7 +26,6 @@ console.log(req.body)
     //if errors rerender try again....
     if (err) return res.render('events/new')
     //redirects to main page.
-    console.log("main shit bitch fuck you")
     res.redirect('/')
   })
 }
@@ -61,11 +60,10 @@ console.log(req.params.id)
 }
 //get edit page
 function editEv(req, res){
-  console.log("EDIT BUTTON HIT")
-  console.log(req.body)
-  Event.findByIdAndUpdate(req.params.id, req.body)
+  Event.findById(req.params.id)
   .populate("createdBy")
   .then(event=>{
+    if (event.createdBy._id.toString() !== req.user._id.toString()) return res.status(401).send('You are not authorized to do that.');
     res.render('events/edit',{
       event,
       user: req.user

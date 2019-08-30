@@ -7,6 +7,7 @@ const eventSchema = new Schema({
     ref: 'User'
   },
   time: Date,
+  
   spot: String,
   discription: String,
   going:[{
