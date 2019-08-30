@@ -19,8 +19,6 @@ function newEvent(req, res){
 
 //saves event to the database
 function create(req, res) {
-console.log("hit create!")
-console.log(req.body)
   const event = new Event(req.body)
   event.save(function (err) {
     //if errors rerender try again....
@@ -41,7 +39,6 @@ console.log(req.body)
 function show(req, res) {
   Event.findById(req.params.id)
   .then(event => {
-    console.log(event)
     res.render('events/show',{
       event,
       user: req.user
@@ -50,10 +47,8 @@ function show(req, res) {
 }
 
 function delEv(req, res) {
-console.log(req.params.id)
   Event.findByIdAndDelete( {"_id" : req.params.id})
   .then(event=> {
-    console.log(event)
     res.redirect("/")
   }
 )
