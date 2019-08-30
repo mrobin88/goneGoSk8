@@ -6,8 +6,8 @@ const eventSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  time: Date,
-  
+  date: Date,
+  time: String,
   spot: String,
   discription: String,
   going:[{
