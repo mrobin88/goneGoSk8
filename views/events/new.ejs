@@ -2,24 +2,23 @@
 </header>
 <h2>Enter a New Skate Event</h2>
 <form action="/events" method="POST">
-  <input type="hidden" value="<%=user._id%>" name="createdBy">
+  <input type="hidden" value="<%= user._id%>" name="createdBy">
   <label>Spot?
-    <input type="text" name="spot">
+    <input required type="text" name="spot" maxlength="15">
   </label>
 <br>
   <label>When?
-    <input type="date" name="date">
-
+    <input required type="date" name="date">
   </label>
 <br>
 <br>
   <label>No but like When?
-    <input type="time" name="time"> 
+    <input required type="time" name="time"> 
   </label>
 <br>
   <label for="discription">What and Why?</label>
-  <input type="text" name="discription">
+  <input maxlength="130" type="text" name="discription">
 <br>
-   <input  type="submit" value="Add Event">
+   <input type="submit" value="Add Event">
  </form>
  <%- include('../partials/footer.ejs') %>

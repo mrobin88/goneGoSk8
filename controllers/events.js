@@ -1,5 +1,5 @@
 const Event = require('../models/event')
-
+const moment = require('moment')
 
 module.exports = {
   newEvent,
@@ -19,7 +19,7 @@ function newEvent(req, res){
 
 //saves event to the database
 function create(req, res) {
-  const event = new Event(req.body)
+   let event = new Event(req.body)
   event.save(function (err) {
     //if errors rerender try again....
     if (err) return res.render('events/new')
@@ -29,7 +29,6 @@ function create(req, res) {
 }
 
 // function show(req, res) {
-
 //   Flight.findById(req.params.id, function (err, flight) {
 //     Ticket.find({flight: flight._id},function(err, tickets){
 //       res.render('flights/show', { airline: 'Flight Details', flight, tickets});

@@ -6,9 +6,9 @@ const eventSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  date: Date,
-  time: String,
   spot: String,
+  date: String,
+  time: String, 
   discription: String,
   going:[{
     type: Schema.Types.ObjectId,

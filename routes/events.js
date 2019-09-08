@@ -10,6 +10,7 @@ router.get('/events/:id/edit', isLoggedIn, eventsController.editEv)
 router.put('/events/:id', isLoggedIn, eventsController.updateEv)
 
 function isLoggedIn(req,res,next){
+    console.log("Auth Check...")
     if(req.isAuthenticated() ) return next()
     res.redirect('/auth/google')
 }
