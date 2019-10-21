@@ -11,7 +11,6 @@ use the link and signup then go sk9.
 
 # Screenshots:
 
-![Landing](public/images/landSH.png "landing")
 ![make new event](public/images/newEventSH.png "event form")
 ![edit and delete](public/images/del_edit.png "Delete and Edit Events")
 
