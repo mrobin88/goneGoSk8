@@ -1,18 +1,11 @@
-# goneGoSk8
-
-Go Skate is an app that allows friends to post up events and let their friends know where they plan on skating.
-use the link and signup then go sk9.
+# goneGoSk9
+Skate Event planner and message board. full stack node js. with auth.
 [You can get a link to the app hosted on heroku here](https://gosk9.herokuapp.com)
 
 #Requirements
 
     Google account
     a modern web browse.
-
-# Screenshots:
-
-![make new event](public/images/newEventSH.png "event form")
-![edit and delete](public/images/del_edit.png "Delete and Edit Events")
 
 # Technologies Used
 * HTML
@@ -23,4 +16,5 @@ use the link and signup then go sk9.
 * Express
 * OAuth
 
+I want to say thank you for all my friends who are posting on Gone Go Sk9. Thanks and keep posting.
 
