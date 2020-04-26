@@ -1,5 +1,5 @@
 # goneGoSk9
-Skate event planner and message board. full stack node js.
+Skate event planner and message board, anyone can join, browse and post.
 [You can get a link to the app hosted on heroku here](https://gosk9.herokuapp.com)
 
 #Requirements
@@ -16,5 +16,4 @@ Skate event planner and message board. full stack node js.
 * Express
 * OAuth
 
-I want to say thank you for all my friends who are posting on Gone Go Sk9. Thanks and keep posting.
 
