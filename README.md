@@ -5,8 +5,7 @@ Skate event planner and message board, anyone can join, browse and post.
 #Requirements
 
     Google account
-    a modern web browse.
-
+    
 # Technologies Used
 * HTML
 * Javascript
@@ -15,5 +14,3 @@ Skate event planner and message board, anyone can join, browse and post.
 * MongoDB
 * Express
 * OAuth
-
-
